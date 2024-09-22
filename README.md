@@ -70,7 +70,7 @@ Asegúrate de tener instaladas las siguientes herramientas en tu sistema Ubuntu:
 - **OpenSSL**
 - **Whiptail** (para la interfaz de usuario en modo texto)
 
-Puedes instalarlas ejecutando los siguientes comandos:
+Puedes instalarlas ejecutando el siguiente comando:
 
 ```bash
 sudo apt update && sudo apt install openssl whiptail -y
