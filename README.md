@@ -42,3 +42,6 @@ Este repositorio incluye una plantilla de Docker Compose para desplegar los sigu
 
    ```bash
    docker-compose -f apilocal-dockercompose.yml up -d
+
+![image](https://github.com/user-attachments/assets/e6f1b3bf-8f32-429f-98ac-bbf20fca6ecc)
+
