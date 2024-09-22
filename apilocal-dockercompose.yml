@@ -1,4 +1,5 @@
 # docker login -u puller -p v1GLVFn6pWoNrQWgEzmx7MYsf1r7TKJQo+kwadvffq+ACRA3mLxs fevripsacr.azurecr.io
+# docker pull fevripsacr.azurecr.io/minsalud.fevrips.apilocal:latest
 # docker-compose -f apilocal-dockercompose.yml up -d
 
 # Versión de la plantilla
