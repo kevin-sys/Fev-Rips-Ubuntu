@@ -47,3 +47,12 @@ Este repositorio incluye una plantilla de Docker Compose para desplegar los sigu
 ## 🚀 **Consumir el API usando POSTMAN** 🚀
 
 ![Logo de FEVRIPS](./img/IniciarSesion.png)
+
+
+## 🚀 **Al iniciar sesión correctamente se nos retornara un JWT** 🚀
+
+![Logo de FEVRIPS](./img/LoginExitoso.png)
+
+## 🚀 **Credenciales incorrectas o Usuario no encontrado** 🚀
+
+![Logo de FEVRIPS](./img/Error.png)
