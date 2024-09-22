@@ -4,24 +4,6 @@
 
 ---
 
-# 🛠 Generador de Firma Digital en Ubuntu 🛠
-
-Este script en Bash te permite generar certificados digitales en formato PFX, utilizando OpenSSL. Incluye un menú interactivo para guiar al usuario a través de las opciones de creación y visualización de certificados.
-
-## 📋 Requisitos Previos
-
-Asegúrate de tener instaladas las siguientes herramientas en tu sistema Ubuntu:
-
-- **OpenSSL**
-- **Whiptail** (para la interfaz de usuario en modo texto)
-
-Puedes instalarlas ejecutando los siguientes comandos:
-
-```bash
-sudo apt update && sudo apt install openssl whiptail -y
-
----
-
 ## 🛠 **Configuración del Entorno**
 
 Este repositorio incluye una plantilla de Docker Compose para desplegar los siguientes servicios:
@@ -76,4 +58,20 @@ Este repositorio incluye una plantilla de Docker Compose para desplegar los sigu
 ![Logo de FEVRIPS](./img/Error.png)
 
 
+
+# 🛠 Generador de Firma Digital en Ubuntu 🛠
+
+Este script en Bash te permite generar certificados digitales en formato PFX, utilizando OpenSSL. Incluye un menú interactivo para guiar al usuario a través de las opciones de creación y visualización de certificados.
+
+## 📋 Requisitos Previos
+
+Asegúrate de tener instaladas las siguientes herramientas en tu sistema Ubuntu:
+
+- **OpenSSL**
+- **Whiptail** (para la interfaz de usuario en modo texto)
+
+Puedes instalarlas ejecutando los siguientes comandos:
+
+```bash
+sudo apt update && sudo apt install openssl whiptail -y
 
