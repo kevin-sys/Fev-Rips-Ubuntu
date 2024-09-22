@@ -44,3 +44,6 @@ Este repositorio incluye una plantilla de Docker Compose para desplegar los sigu
    docker-compose -f apilocal-dockercompose.yml up -d
 
    
+## 🚀 **Consumir el API usando POSTMAN** 🚀
+
+![Logo de FEVRIPS](./img/IniciarSesion.png)
