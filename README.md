@@ -72,14 +72,7 @@ Asegúrate de tener instaladas las siguientes herramientas en tu sistema Ubuntu:
 
 Puedes instalarlas ejecutando los siguientes comandos:
 
-```bash
-sudo apt update && sudo apt install openssl whiptail -y
-
-Luego debes ejecutar el script con el siguiente comando:
-
-Puedes instalarlas ejecutando los siguientes comandos:
-
-```bash
-sudo apt update && sudo apt install openssl whiptail -y
-
+   ```bash
+   sudo apt update && sudo apt install openssl whiptail -y
+---
 
