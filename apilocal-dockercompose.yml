@@ -1,0 +1,91 @@
+# docker login -u puller -p v1GLVFn6pWoNrQWgEzmx7MYsf1r7TKJQo+kwadvffq+ACRA3mLxs fevripsacr.azurecr.io
+# docker-compose -f apilocal-dockercompose.yml up -d
+
+# Versión de la plantilla
+version: "3.8"
+
+
+networks:
+
+    fevrips-net:
+        driver: bridge
+
+
+services:
+
+    fevrips-db:
+        container_name: fevrips-db
+        image: mcr.microsoft.com/mssql/server:2022-CU12-ubuntu-22.04
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.80'
+                    memory: 9G
+                reservations:
+                    cpus: '0.25'
+                    memory: 4G
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=FEVRIPS1*
+            - MSSQL_MEMORY_LIMIT_MB=9000
+            - MSSQL_COLLATION=SQL_Latin1_General_CP1_CI_AS
+            - MSSQL_PID=Enterprise
+        networks:
+          - fevrips-net
+
+    fevrips-api:
+        container_name: fevrips-api
+        image: fevripsacr.azurecr.io/minsalud.fevrips.apilocal
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.50'
+                    memory: 3G
+                reservations:
+                    cpus: '0.25'
+                    memory: 1G
+        ports:
+          - "9443:5100"
+        environment:
+          - ASPNETCORE_ENVIRONMENT=Docker
+          - ASPNETCORE_Kestrel__Certificates__Default__Password=AQUI_LA_PASSWORD
+          - ASPNETCORE_Kestrel__Certificates__Default__Path=/certificates AQUI_EL_CERTIFICADO.pfx
+        volumes:
+          #- C:\Certificates:/certificates
+          - /home/idreec/Certificates:/certificates
+        networks:
+          - fevrips-net
+        depends_on:   
+          - fevrips-db
+
+# Versión: 4.1 Ambiente de capacitación y pruebas piloto
+
+# esta versión introduce una serie de ajustes y mejoras para optimizar el proceso de validación y cumplir con las exigencias normativas.
+
+# Nuevas Características y Ajustes
+
+# 1. Disposiciones Generales
+
+# - Nota de Crédito Parcial CAPITA: Se han integrado el servicio de carga de notas de crédito parciales de CAPITA.
+# - Nota de Crédito Parcial Acuerdo de Voluntades: Se han integrado el servicio de carga de notas de crédito parciales bajo acuerdos de voluntades.
+
+# 2. Validaciones y Ajustes Técnicos
+
+# - Ajuste Validación de la Propiedad Causa Motivo Atención en los servicios por Consultas según tabla de referencia.
+
+# - Ajuste de la Validación del Campo tributo.RoundingAmount en los Documentos XML.
+
+# - Ajuste Validación RVG15 - Estancias de Urgencias: Mejoras en la validación de las estancias de urgencias y reporte de consultas por urgencias, asegurando que los registros se validen conforme a los nuevos lineamientos del Mecanismo de validación.
+
+# - Ajuste Validación RVC056 - Validación de Estancias con Registro de Urgencias u Hospitalizaciones.
+
+#- Ajuste y homologación de nombres de las propiedades en las respuestas. 
+
+# 3. Ajustes del servicio Autenticación, para soportar prestadores con varios códigos generales por departamento de habilitación.
+
+# 4. Cambios en el tipo de Validación
+
+# - Ajuste cambio de tipo de validación RVG06: El tipo de validación RVG06 en Fórmulas Magistrales ha sido cambiado de rechazo a notificación, específicamente en el campo Fórmula Farmacéutica  ("El valor del campo formula farmacéutica no es igual en todos los principios activos que componen la fórmula magistral").
+
+
+
