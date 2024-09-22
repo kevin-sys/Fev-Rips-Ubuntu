@@ -29,7 +29,7 @@ Este repositorio incluye una plantilla de Docker Compose para desplegar los sigu
 
 ## 💿 **Descargar la imagen de la API local de FEVRIPS**
 
-1. **Este comando descarga la última versión de la imagen Docker de la API local desde el Azure Container Registry**
+2. **Este comando descarga la última versión de la imagen Docker de la API local desde el Azure Container Registry**
 
    ```bash
    docker pull fevripsacr.azurecr.io/minsalud.fevrips.apilocal:latest
@@ -38,7 +38,7 @@ Este repositorio incluye una plantilla de Docker Compose para desplegar los sigu
 
 ## 🔌 **Iniciar los Servicios**
 
-1. **Para iniciar los servicios, usa el sgte comando**
+3. **Para iniciar los servicios, usa el siguiente comando**
 
    ```bash
    docker-compose -f apilocal-dockercompose.yml up -d
