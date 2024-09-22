@@ -20,6 +20,8 @@ Puedes instalarlas ejecutando los siguientes comandos:
 ```bash
 sudo apt update && sudo apt install openssl whiptail -y
 
+---
+
 ## 🛠 **Configuración del Entorno**
 
 Este repositorio incluye una plantilla de Docker Compose para desplegar los siguientes servicios:
