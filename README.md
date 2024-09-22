@@ -77,7 +77,9 @@ sudo apt update && sudo apt install openssl whiptail -y
 
 Luego debes ejecutar el script con el siguiente comando:
 
+Puedes instalarlas ejecutando los siguientes comandos:
+
 ```bash
-./crear_pfx.sh
+sudo apt update && sudo apt install openssl whiptail -y
 
 
